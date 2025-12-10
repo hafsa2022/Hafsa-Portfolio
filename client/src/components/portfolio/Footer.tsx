@@ -1,0 +1,114 @@
+import { motion } from "framer-motion";
+import { Heart } from "lucide-react";
+import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
+import Logo from "./Logo";
+
+const footerLinks = [
+  { href: "#home", label: "الرئيسية" },
+  { href: "#about", label: "من أنا" },
+  { href: "#projects", label: "المشاريع" },
+  { href: "#contact", label: "تواصل معي" },
+];
+
+const socialLinks = [
+  { icon: SiGithub, href: "#", label: "GitHub" },
+  { icon: SiLinkedin, href: "#", label: "LinkedIn" },
+  { icon: SiX, href: "#", label: "X" },
+];
+
+export default function Footer() {
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <footer
+      className="bg-card border-t border-border py-12"
+      data-testid="footer"
+    >
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-4"
+          >
+            <div className="flex items-center gap-3">
+              <Logo size="md" />
+              <div>
+                <h3 className="font-bold text-foreground">Hafsa EL AKHDAR</h3>
+                <p className="text-sm text-muted-foreground">
+                  مهندسة معلومات جغرافية
+                </p>
+              </div>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Transforming geospatial data into innovative solutions and building modern web applications.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="space-y-4"
+          >
+            <h3 className="font-bold text-foreground">روابط سريعة</h3>
+            <nav className="flex flex-col gap-2">
+              {footerLinks.map((link) => (
+                <button
+                  key={link.href}
+                  onClick={() => scrollToSection(link.href)}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors text-right"
+                  data-testid={`link-footer-${link.href.slice(1)}`}
+                >
+                  {link.label}
+                </button>
+              ))}
+            </nav>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="space-y-4"
+          >
+            <h3 className="font-bold text-foreground">تابعني</h3>
+            <div className="flex gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors"
+                  data-testid={`link-footer-social-${social.label.toLowerCase()}`}
+                >
+                  <social.icon className="h-5 w-5" />
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="border-t border-border pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+            <p>
+              © {new Date().getFullYear()} Hafsa EL AKHDAR. جميع الحقوق محفوظة.
+            </p>
+            <p className="flex items-center gap-1">
+              Made with <Heart className="h-4 w-4 text-red-500 fill-red-500" /> using React
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
