@@ -10,9 +10,9 @@ import {
 import { useLanguage } from "./LanguageContext";
 
 const languages = [
-  { code: "fr", label: "Français", flag: "🇫🇷" },
-  { code: "ar", label: "العربية", flag: "🇲🇦" },
-  { code: "en", label: "English", flag: "🇬🇧" },
+  { code: "fr", label: "Français", abbr: "FR" },
+  { code: "ar", label: "العربية", abbr: "ع" },
+  { code: "en", label: "English", abbr: "EN" },
 ];
 
 export default function LanguageSwitcher() {
@@ -41,7 +41,7 @@ export default function LanguageSwitcher() {
             className={language === lang.code ? "bg-accent" : ""}
             data-testid={`button-lang-${lang.code}`}
           >
-            <span className="mr-2">{lang.flag}</span>
+            <span className="mr-2 font-medium text-xs w-5">{lang.abbr}</span>
             {lang.label}
           </DropdownMenuItem>
         ))}
