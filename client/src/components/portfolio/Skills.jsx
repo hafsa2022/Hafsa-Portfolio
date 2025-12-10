@@ -1,36 +1,55 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Map, Code2, Database } from "lucide-react";
-
-const skillCategories = [
-  {
-    id: "sig",
-    title: "أدوات SIG",
-    titleFr: "Outils SIG",
-    icon: Map,
-    color: "from-emerald-500 to-teal-500",
-    skills: ["QGIS", "ArcGIS", "PostGIS", "GDAL", "Leaflet", "OpenLayers"],
-  },
-  {
-    id: "development",
-    title: "التطوير",
-    titleFr: "Développement",
-    icon: Code2,
-    color: "from-blue-500 to-cyan-500",
-    skills: ["React", "Vue.js", "Laravel", "Node.js", "PHP", "JavaScript", "Python", "TypeScript"],
-  },
-  {
-    id: "databases",
-    title: "قواعد البيانات",
-    titleFr: "Bases de données",
-    icon: Database,
-    color: "from-purple-500 to-pink-500",
-    skills: ["PostgreSQL", "MySQL", "SQLite", "MongoDB", "Redis"],
-  },
-];
+import { Map, Code2, Database, Palette, FileText } from "lucide-react";
+import { useLanguage } from "./LanguageContext";
 
 export default function Skills() {
+  const { t } = useLanguage();
+
+  const skillCategories = [
+    {
+      id: "sig",
+      title: t.skills.sig,
+      titleDesc: t.skills.sigDesc,
+      icon: Map,
+      color: "from-emerald-500 to-teal-500",
+      skills: ["QGIS", "ArcGIS", "PostGIS", "GDAL", "Leaflet", "OpenLayers", "Google Maps"],
+    },
+    {
+      id: "development",
+      title: t.skills.development,
+      titleDesc: t.skills.developmentDesc,
+      icon: Code2,
+      color: "from-blue-500 to-cyan-500",
+      skills: ["React", "Angular", "Vue.js", "Laravel", "Node.js", "PHP", "JavaScript", "TypeScript", "Python", "HTML", "CSS"],
+    },
+    {
+      id: "databases",
+      title: t.skills.databases,
+      titleDesc: t.skills.databasesDesc,
+      icon: Database,
+      color: "from-purple-500 to-pink-500",
+      skills: ["PostgreSQL", "MySQL", "SQLite"],
+    },
+    {
+      id: "design",
+      title: t.skills.design,
+      titleDesc: t.skills.designDesc,
+      icon: Palette,
+      color: "from-pink-500 to-rose-500",
+      skills: ["Figma", "Adobe XD", "Photoshop", "Illustrator"],
+    },
+    {
+      id: "techniques",
+      title: t.skills.techniques,
+      titleDesc: t.skills.techniquesDesc,
+      icon: FileText,
+      color: "from-orange-500 to-amber-500",
+      skills: ["Documentation Technique", "Gestion de Projet", "Méthodologie Agile", "Git/GitHub"],
+    },
+  ];
+
   return (
     <section
       id="skills"
@@ -46,10 +65,10 @@ export default function Skills() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            المهارات
+            {t.skills.title}
           </h2>
           <p className="text-muted-foreground text-lg">
-            Mes compétences techniques et professionnelles
+            {t.skills.subtitle}
           </p>
         </motion.div>
 
@@ -70,7 +89,7 @@ export default function Skills() {
                   {category.title}
                 </h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  {category.titleFr}
+                  {category.titleDesc}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (

@@ -4,21 +4,24 @@ import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
-
-const navLinks = [
-  { href: "#home", label: "الرئيسية" },
-  { href: "#about", label: "من أنا" },
-  { href: "#skills", label: "المهارات" },
-  { href: "#technologies", label: "التقنيات" },
-  { href: "#projects", label: "المشاريع" },
-  { href: "#activities", label: "الأنشطة" },
-  { href: "#testimonials", label: "التوصيات" },
-  { href: "#contact", label: "تواصل معي" },
-];
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "./LanguageContext";
 
 export default function Navbar() {
+  const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: "#home", label: t.nav.home },
+    { href: "#about", label: t.nav.about },
+    { href: "#skills", label: t.nav.skills },
+    { href: "#technologies", label: t.nav.technologies },
+    { href: "#projects", label: t.nav.projects },
+    { href: "#activities", label: t.nav.activities },
+    { href: "#testimonials", label: t.nav.testimonials },
+    { href: "#contact", label: t.nav.contact },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +31,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
+  const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -72,6 +75,7 @@ export default function Navbar() {
             </div>
 
             <div className="flex items-center gap-2">
+              <LanguageSwitcher />
               <ThemeToggle />
               <Button
                 variant="default"
@@ -81,7 +85,7 @@ export default function Navbar() {
                 data-testid="button-download-cv"
               >
                 <Download className="h-4 w-4" />
-                <span>تحميل السيرة</span>
+                <span>{t.nav.downloadCV}</span>
               </Button>
               <Button
                 variant="ghost"
@@ -123,7 +127,7 @@ export default function Navbar() {
                   <motion.button
                     key={link.href}
                     onClick={() => scrollToSection(link.href)}
-                    className="text-right text-xl py-3 text-foreground hover:text-primary transition-colors"
+                    className="text-xl py-3 text-foreground hover:text-primary transition-colors text-start"
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
@@ -140,7 +144,7 @@ export default function Navbar() {
                   onClick={() => console.log("Download CV clicked")}
                 >
                   <Download className="h-4 w-4" />
-                  <span>تحميل السيرة الذاتية</span>
+                  <span>{t.nav.downloadCV}</span>
                 </Button>
               </div>
             </div>

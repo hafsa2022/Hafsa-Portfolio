@@ -1,15 +1,18 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "./LanguageContext";
 import heroBg from "@assets/generated_images/hero_section_tech_background.png";
 
-const professions = [
-  "Ingénieure en Géoinformation (SIG)",
-  "Développeuse SIG",
-  "Développeuse Full Stack",
-];
-
 export default function Hero() {
+  const { t } = useLanguage();
+
+  const professions = [
+    t.hero.profession1,
+    t.hero.profession2,
+    t.hero.profession3,
+  ];
+
   const scrollToProjects = () => {
     const element = document.querySelector("#projects");
     if (element) {
@@ -36,7 +39,7 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
       
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 py-32 text-center md:text-right">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 py-32 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -49,7 +52,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            مرحباً بكم
+            {t.hero.welcome}
           </motion.p>
           
           <motion.h1
@@ -65,10 +68,10 @@ export default function Hero() {
           <div className="space-y-2">
             {professions.map((profession, index) => (
               <motion.p
-                key={profession}
+                key={index}
                 className="text-lg md:text-xl text-gray-300"
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 + index * 0.1 }}
                 data-testid={`text-profession-${index}`}
               >
@@ -78,16 +81,16 @@ export default function Hero() {
           </div>
 
           <motion.p
-            className="text-gray-400 text-lg max-w-2xl mx-auto md:mr-0 md:ml-auto"
+            className="text-gray-400 text-lg max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
           >
-            Je transforme les données géospatiales en solutions innovantes et développe des applications web modernes.
+            {t.hero.description}
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center md:justify-end pt-4"
+            className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
@@ -97,7 +100,7 @@ export default function Hero() {
               onClick={scrollToProjects}
               data-testid="button-explore-projects"
             >
-              استكشف مشاريعي
+              {t.hero.exploreProjects}
             </Button>
             <Button
               variant="outline"
@@ -106,7 +109,7 @@ export default function Hero() {
               onClick={scrollToContact}
               data-testid="button-contact-hero"
             >
-              تواصل معي
+              {t.hero.contactMe}
             </Button>
           </motion.div>
         </motion.div>

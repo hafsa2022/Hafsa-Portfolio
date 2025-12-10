@@ -8,27 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
 import { useToast } from "@/hooks/use-toast";
-
-const contactInfo = [
-  {
-    icon: Mail,
-    label: "البريد الإلكتروني",
-    value: "hafsa.elakhdar@email.com",
-    href: "mailto:hafsa.elakhdar@email.com",
-  },
-  {
-    icon: Phone,
-    label: "الهاتف",
-    value: "+212 6XX XXX XXX",
-    href: "tel:+2126XXXXXXXX",
-  },
-  {
-    icon: MapPin,
-    label: "الموقع",
-    value: "Casablanca, Maroc",
-    href: "#",
-  },
-];
+import { useLanguage } from "./LanguageContext";
 
 const socialLinks = [
   { icon: SiGithub, label: "GitHub", href: "#", color: "#181717" },
@@ -38,6 +18,7 @@ const socialLinks = [
 
 export default function Contact() {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -45,7 +26,28 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const contactInfo = [
+    {
+      icon: Mail,
+      label: t.contact.emailLabel,
+      value: "hafsa.elakhdar@email.com",
+      href: "mailto:hafsa.elakhdar@email.com",
+    },
+    {
+      icon: Phone,
+      label: t.contact.phoneLabel,
+      value: "+212 6XX XXX XXX",
+      href: "tel:+2126XXXXXXXX",
+    },
+    {
+      icon: MapPin,
+      label: t.contact.locationLabel,
+      value: "Casablanca, Maroc",
+      href: "#",
+    },
+  ];
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     
@@ -53,8 +55,8 @@ export default function Contact() {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     
     toast({
-      title: "تم إرسال الرسالة",
-      description: "شكراً لتواصلك. سأرد عليك في أقرب وقت ممكن.",
+      title: t.contact.successTitle,
+      description: t.contact.successDesc,
     });
     
     setFormData({ name: "", email: "", message: "" });
@@ -76,16 +78,16 @@ export default function Contact() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            تواصل معي
+            {t.contact.title}
           </h2>
           <p className="text-muted-foreground text-lg">
-            N'hésitez pas à me contacter pour vos projets
+            {t.contact.subtitle}
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-8">
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
@@ -94,10 +96,10 @@ export default function Contact() {
             <Card className="p-6">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
-                  <Label htmlFor="name">الاسم الكامل</Label>
+                  <Label htmlFor="name">{t.contact.fullName}</Label>
                   <Input
                     id="name"
-                    placeholder="أدخل اسمك الكامل"
+                    placeholder={t.contact.fullNamePlaceholder}
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
@@ -107,11 +109,11 @@ export default function Contact() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email">البريد الإلكتروني</Label>
+                  <Label htmlFor="email">{t.contact.email}</Label>
                   <Input
                     id="email"
                     type="email"
-                    placeholder="أدخل بريدك الإلكتروني"
+                    placeholder={t.contact.emailPlaceholder}
                     value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
@@ -121,10 +123,10 @@ export default function Contact() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="message">الرسالة</Label>
+                  <Label htmlFor="message">{t.contact.message}</Label>
                   <Textarea
                     id="message"
-                    placeholder="اكتب رسالتك هنا..."
+                    placeholder={t.contact.messagePlaceholder}
                     rows={5}
                     value={formData.message}
                     onChange={(e) =>
@@ -142,14 +144,14 @@ export default function Contact() {
                   data-testid="button-submit-contact"
                 >
                   <Send className="h-4 w-4" />
-                  {isSubmitting ? "جاري الإرسال..." : "إرسال الرسالة"}
+                  {isSubmitting ? t.contact.sending : t.contact.send}
                 </Button>
               </form>
             </Card>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -157,7 +159,7 @@ export default function Contact() {
           >
             <Card className="p-6">
               <h3 className="font-bold text-foreground mb-4">
-                معلومات الاتصال
+                {t.contact.contactInfo}
               </h3>
               <div className="space-y-4">
                 {contactInfo.map((info) => (
@@ -185,7 +187,7 @@ export default function Contact() {
 
             <Card className="p-6">
               <h3 className="font-bold text-foreground mb-4">
-                تابعني على
+                {t.contact.followMe}
               </h3>
               <div className="flex gap-3">
                 {socialLinks.map((social) => (

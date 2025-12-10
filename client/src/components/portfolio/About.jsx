@@ -1,27 +1,30 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { MapPin, Code, Database } from "lucide-react";
+import { useLanguage } from "./LanguageContext";
 import profileImg from "@assets/generated_images/professional_profile_placeholder.png";
 
-const milestones = [
-  {
-    icon: MapPin,
-    title: "Géoinformation",
-    description: "Analyse spatiale et cartographie avancée",
-  },
-  {
-    icon: Database,
-    title: "Systèmes d'Information Géographique",
-    description: "Maîtrise des outils SIG professionnels",
-  },
-  {
-    icon: Code,
-    title: "Développement Full Stack",
-    description: "Applications web modernes et performantes",
-  },
-];
-
 export default function About() {
+  const { t } = useLanguage();
+
+  const milestones = [
+    {
+      icon: MapPin,
+      title: t.about.milestone1,
+      description: t.about.milestone1Desc,
+    },
+    {
+      icon: Database,
+      title: t.about.milestone2,
+      description: t.about.milestone2Desc,
+    },
+    {
+      icon: Code,
+      title: t.about.milestone3,
+      description: t.about.milestone3Desc,
+    },
+  ];
+
   return (
     <section
       id="about"
@@ -37,10 +40,10 @@ export default function About() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            من أنا
+            {t.about.title}
           </h2>
           <p className="text-muted-foreground text-lg">
-            Découvrez mon parcours professionnel
+            {t.about.subtitle}
           </p>
         </motion.div>
 
@@ -54,22 +57,13 @@ export default function About() {
           >
             <div className="space-y-6">
               <p className="text-foreground text-lg leading-relaxed">
-                Je suis <strong>Hafsa EL AKHDAR</strong>, une ingénieure passionnée par 
-                la géoinformation et le développement web. Mon parcours unique combine 
-                l'expertise en Systèmes d'Information Géographique (SIG) avec les 
-                compétences en développement Full Stack.
+                {t.about.bio1}
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Après avoir maîtrisé les outils d'analyse spatiale et de cartographie, 
-                j'ai élargi mes compétences vers le développement d'applications web 
-                modernes. Cette double expertise me permet de créer des solutions 
-                innovantes qui transforment les données géospatiales en applications 
-                interactives et accessibles.
+                {t.about.bio2}
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Je m'engage à fournir des solutions de haute qualité qui répondent aux 
-                besoins spécifiques de chaque projet, en combinant précision technique 
-                et créativité.
+                {t.about.bio3}
               </p>
             </div>
 

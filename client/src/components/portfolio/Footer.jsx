@@ -2,13 +2,7 @@ import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
 import Logo from "./Logo";
-
-const footerLinks = [
-  { href: "#home", label: "الرئيسية" },
-  { href: "#about", label: "من أنا" },
-  { href: "#projects", label: "المشاريع" },
-  { href: "#contact", label: "تواصل معي" },
-];
+import { useLanguage } from "./LanguageContext";
 
 const socialLinks = [
   { icon: SiGithub, href: "#", label: "GitHub" },
@@ -17,7 +11,16 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-  const scrollToSection = (href: string) => {
+  const { t } = useLanguage();
+
+  const footerLinks = [
+    { href: "#home", label: t.nav.home },
+    { href: "#about", label: t.nav.about },
+    { href: "#projects", label: t.nav.projects },
+    { href: "#contact", label: t.nav.contact },
+  ];
+
+  const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -42,12 +45,12 @@ export default function Footer() {
               <div>
                 <h3 className="font-bold text-foreground">Hafsa EL AKHDAR</h3>
                 <p className="text-sm text-muted-foreground">
-                  مهندسة معلومات جغرافية
+                  {t.footer.role}
                 </p>
               </div>
             </div>
             <p className="text-sm text-muted-foreground">
-              Transforming geospatial data into innovative solutions and building modern web applications.
+              {t.footer.description}
             </p>
           </motion.div>
 
@@ -58,13 +61,13 @@ export default function Footer() {
             transition={{ delay: 0.1 }}
             className="space-y-4"
           >
-            <h3 className="font-bold text-foreground">روابط سريعة</h3>
+            <h3 className="font-bold text-foreground">{t.footer.quickLinks}</h3>
             <nav className="flex flex-col gap-2">
               {footerLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors text-right"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors text-start"
                   data-testid={`link-footer-${link.href.slice(1)}`}
                 >
                   {link.label}
@@ -80,7 +83,7 @@ export default function Footer() {
             transition={{ delay: 0.2 }}
             className="space-y-4"
           >
-            <h3 className="font-bold text-foreground">تابعني</h3>
+            <h3 className="font-bold text-foreground">{t.footer.followMe}</h3>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
@@ -101,10 +104,10 @@ export default function Footer() {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
             <p>
-              © {new Date().getFullYear()} Hafsa EL AKHDAR. جميع الحقوق محفوظة.
+              © {new Date().getFullYear()} Hafsa EL AKHDAR. {t.footer.rights}
             </p>
             <p className="flex items-center gap-1">
-              Made with <Heart className="h-4 w-4 text-red-500 fill-red-500" /> using React
+              {t.footer.madeWith} <Heart className="h-4 w-4 text-red-500 fill-red-500" /> {t.footer.using}
             </p>
           </div>
         </div>

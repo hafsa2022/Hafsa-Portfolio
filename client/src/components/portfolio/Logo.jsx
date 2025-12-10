@@ -1,11 +1,6 @@
 import { motion } from "framer-motion";
 
-interface LogoProps {
-  size?: "sm" | "md" | "lg";
-  className?: string;
-}
-
-export default function Logo({ size = "md", className = "" }: LogoProps) {
+export default function Logo({ size = "md", className = "" }) {
   const sizeClasses = {
     sm: "w-8 h-8 text-sm",
     md: "w-10 h-10 text-base",

@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@/components/portfolio/ThemeProvider";
+import { LanguageProvider } from "@/components/portfolio/LanguageContext";
 import Navbar from "@/components/portfolio/Navbar";
 import Hero from "@/components/portfolio/Hero";
 import About from "@/components/portfolio/About";
@@ -14,21 +15,23 @@ import ScrollToTop from "@/components/portfolio/ScrollToTop";
 export default function Home() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-background">
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Skills />
-          <Technologies />
-          <Projects />
-          <Activities />
-          <Testimonials />
-          <Contact />
-        </main>
-        <Footer />
-        <ScrollToTop />
-      </div>
+      <LanguageProvider>
+        <div className="min-h-screen bg-background">
+          <Navbar />
+          <main>
+            <Hero />
+            <About />
+            <Skills />
+            <Technologies />
+            <Projects />
+            <Activities />
+            <Testimonials />
+            <Contact />
+          </main>
+          <Footer />
+          <ScrollToTop />
+        </div>
+      </LanguageProvider>
     </ThemeProvider>
   );
 }
