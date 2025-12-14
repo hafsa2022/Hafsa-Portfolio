@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "./LanguageContext";
@@ -12,6 +13,15 @@ export default function Hero() {
     t.hero.profession2,
     t.hero.profession3,
   ];
+
+  const [titleIndex, setTitleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTitleIndex((prev) => (prev + 1) % professions.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   const scrollToProjects = () => {
     const element = document.querySelector("#projects");
@@ -65,20 +75,22 @@ export default function Hero() {
             Hafsa EL AKHDAR
           </motion.h1>
 
-          <div className="space-y-2">
-            {professions.map((profession, index) => (
-              <motion.p
-                key={index}
-                className="text-lg md:text-xl text-gray-300"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 + index * 0.1 }}
-                data-testid={`text-profession-${index}`}
-              >
-                {profession}
-              </motion.p>
-            ))}
-          </div>
+           <div className="mb-4" style={{ height: '48px' }}>
+                <AnimatePresence mode="wait">
+                  <motion.p
+                    key={titleIndex}
+                    className="h3 fw-medium text-primary mb-0 font-display"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.3 }}
+                    data-testid="text-title"
+                  >
+                    {professions[titleIndex]}
+                  </motion.p>
+                </AnimatePresence>
+              </div>
+
 
           <motion.p
             className="text-gray-400 text-lg max-w-2xl mx-auto"

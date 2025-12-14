@@ -5,9 +5,8 @@ import Logo from "./Logo";
 import { useLanguage } from "./LanguageContext";
 
 const socialLinks = [
-  { icon: SiGithub, href: "#", label: "GitHub" },
-  { icon: SiLinkedin, href: "#", label: "LinkedIn" },
-  { icon: SiX, href: "#", label: "X" },
+  { icon: SiGithub, href: "https://github.com/hafsa2022", label: "GitHub" },
+  { icon: SiLinkedin, href: "https://www.linkedin.com/in/hafsa-el-akhdar-92b446198/", label: "LinkedIn" }
 ];
 
 export default function Footer() {
@@ -107,7 +106,7 @@ export default function Footer() {
               © {new Date().getFullYear()} Hafsa EL AKHDAR. {t.footer.rights}
             </p>
             <p className="flex items-center gap-1">
-              {t.footer.madeWith} <Heart className="h-4 w-4 text-red-500 fill-red-500" /> {t.footer.using}
+              {t.footer.madeWith} <Heart className="h-4 w-4 text-red-500 fill-red-500" />
             </p>
           </div>
         </div>

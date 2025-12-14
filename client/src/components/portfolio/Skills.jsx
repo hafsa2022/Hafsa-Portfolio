@@ -14,7 +14,7 @@ export default function Skills() {
       titleDesc: t.skills.sigDesc,
       icon: Map,
       color: "from-emerald-500 to-teal-500",
-      skills: ["QGIS", "ArcGIS", "PostGIS", "GDAL", "Leaflet", "OpenLayers", "Google Maps"],
+      skills: ["QGIS", "ArcGIS", "PostGIS", "Leaflet", "OpenLayers", "Google Maps"],
     },
     {
       id: "development",
@@ -38,7 +38,7 @@ export default function Skills() {
       titleDesc: t.skills.designDesc,
       icon: Palette,
       color: "from-pink-500 to-rose-500",
-      skills: ["Figma", "Adobe XD", "Photoshop", "Illustrator"],
+      skills: ["Figma"],
     },
     {
       id: "techniques",
@@ -46,7 +46,7 @@ export default function Skills() {
       titleDesc: t.skills.techniquesDesc,
       icon: FileText,
       color: "from-orange-500 to-amber-500",
-      skills: ["Documentation Technique", "Gestion de Projet", "Méthodologie Agile", "Git/GitHub"],
+      skills: ["Documentation Technique", "Méthodologie Agile", "Git/GitHub"],
     },
   ];
 

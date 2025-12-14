@@ -5,161 +5,243 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
-import gisProject from "@assets/generated_images/gis_project_screenshot.png";
-import webApp from "@assets/generated_images/web_app_dashboard_project.png";
+import geoprtalImage from "../../assets/geoportal.png";
+// import moviesImage from "../../assets/";
+import invoiceImage from "../../assets/invoice_app.png";
+import urlShortnerImage from "../../assets/url_shortener.png";
+import jobBordImage from "../../assets/job_board.png";
+import webEcommerceImage from "../../assets/ecommerce.png";
+import productManagementImage from "../../assets/product_manage.png";
 import mapProject from "@assets/generated_images/interactive_map_project.png";
 
-// todo: remove mock functionality
+
 const projectsData = {
   fr: [
     {
       id: 1,
-      title: "Système d'Analyse Spatiale",
-      description: "Application d'analyse géospatiale avancée pour la gestion territoriale et l'urbanisme.",
-      image: gisProject,
-      category: "sig",
-      technologies: ["QGIS", "PostGIS", "Python", "Leaflet"],
+      title: "projet de chercher Films",
+      description: "Simple page web permet d'effectuer des recherches des films.",
+      image: mapProject,
+      category: "fullstack",
+      technologies: ["React", "Appwrite" ,"TMDB API" ],
+      linkGitHub: "https://github.com/hafsa2022/movies-project",
+      linkDemo : "",
     },
     {
       id: 2,
-      title: "Dashboard Analytics",
-      description: "Tableau de bord interactif pour la visualisation de données en temps réel.",
-      image: webApp,
+      title: "Application de gestion des factures",
+      description: "Une app permet d’effectuer diverses opérations telles que la recherche, la création, la mise à jour, le téléchargement et la suppression de factures. De plus, il permet de changer la langue du français à l’anglais.",
+      image: invoiceImage,
       category: "fullstack",
-      technologies: ["React", "Node.js", "PostgreSQL", "Chart.js"],
+      technologies: ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel", "JWT Auth", "i18n"],
+      linkGitHub: "https://github.com/hafsa2022/invoice-app-front",
+      linkDemo : "https://drive.google.com/file/d/1gRq4IS3QGc1CGuP4lUEA0WhLgKYJARH6/view?usp=sharing",
     },
     {
       id: 3,
-      title: "Cartographie Interactive",
-      description: "Application de cartographie web avec géolocalisation et filtres avancés.",
-      image: mapProject,
-      category: "sig",
-      technologies: ["Vue.js", "Google Maps", "Laravel", "MySQL"],
+      title: "Site Web-ecommerce",
+      description: "Le E-Commerce Project avec Spring Boot, Angular, JWT Athentication et mariaDB est une application web innovante qui permet aux utilisateurs d’explorer et d’acheter une large gamme de produits.",
+      image: webEcommerceImage,
+      category: "fullstack",
+      technologies: ["Angular", "Spring Boot", "MariaDB", "JWT Auth"],
+      linkGitHub: "https://github.com/hafsa2022/ecommerce-website-frontend",
+      linkDemo : "",
     },
     {
       id: 4,
-      title: "Plateforme E-commerce",
-      description: "Solution e-commerce complète avec gestion de produits et paiements.",
-      image: webApp,
+      title: "App de gestion des produits",
+      description: "L’application web nous permet de rechercher, créer, mettre à jour et supprimer des produits",
+      image: productManagementImage,
       category: "fullstack",
-      technologies: ["Angular", "Laravel", "MySQL"],
+      technologies:  ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel"],
+      linkGitHub: "https://github.com/hafsa2022/product-management-web-application-frontend",
+      linkDemo : "",
     },
     {
       id: 5,
-      title: "Système de Géocodage",
-      description: "Service de géocodage et recherche d'adresses avec base de données spatiale.",
-      image: gisProject,
-      category: "sig",
-      technologies: ["Python", "PostgreSQL", "FastAPI", "PostGIS"],
+      title: "Tableau d’offres d’emploi",
+      description: "L’application web nous permet de rechercher, créer, mettre à jour et supprimer des produits",
+      image: jobBordImage,
+      category: "fullstack",
+      technologies:  ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel", "JWT Auth"],
+      linkGitHub: "https://github.com/hafsa2022/job-board-angular-laravel",
+      linkDemo : "",
     },
     {
       id: 6,
-      title: "API RESTful",
-      description: "API robuste pour la gestion de données avec authentification JWT.",
-      image: mapProject,
+      title: "Géoportail simple",
+      description: "Simple Geoportail nous permet de cartographier, de chercher des lieux et de manipuler entre les couches.",
+      image: geoprtalImage,
+      category: "sig",
+      technologies: ["Vue.js", "Vuetify", "Leaflet"],
+      linkGitHub: "https://github.com/hafsa2022/mini-geoportail",
+      linkDemo : "",
+    },
+    {
+      id: 7,
+      title: "Raccourcisseur d’URL",
+      description: "page web qui permet de raccourcir des URL longues en des liens plus courts et faciles à partager.",
+      image: urlShortnerImage,
       category: "fullstack",
-      technologies: ["Node.js", "Express", "PostgreSQL", "JWT"],
+      technologies: ["Angular", "Laravel", "CSS"],
+      linkGitHub: "https://github.com/hafsa2022/url-shortener-frontend",
+      linkDemo : "",
     },
   ],
   ar: [
     {
       id: 1,
-      title: "نظام التحليل المكاني",
-      description: "تطبيق تحليل جغرافي مكاني متقدم لإدارة الأراضي والتخطيط العمراني.",
-      image: gisProject,
-      category: "sig",
-      technologies: ["QGIS", "PostGIS", "Python", "Leaflet"],
+      title: "مشروع البحث عن الأفلام",
+      description: "صفحة ويب بسيطة تتيح للمستخدم البحث عن الأفلام.",
+      image: mapProject,
+      category: "fullstack",
+      technologies: ["React", "Appwrite", "TMDB API"],
+      linkGitHub: "https://github.com/hafsa2022/movies-project",
+      linkDemo : "",
     },
     {
       id: 2,
-      title: "لوحة تحليلات البيانات",
-      description: "لوحة معلومات تفاعلية لعرض البيانات في الوقت الفعلي.",
-      image: webApp,
+      title: "تطبيق إدارة الفواتير",
+      description:
+        "تطبيق يتيح للمستخدم تنفيذ عدة عمليات مثل البحث، الإنشاء، التحديث، التحميل وحذف الفواتير، كما يدعم تغيير اللغة من الفرنسية إلى الإنجليزية.",
+      image: invoiceImage,
       category: "fullstack",
-      technologies: ["React", "Node.js", "PostgreSQL", "Chart.js"],
+      technologies: ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel", "JWT Auth"],
+      linkGitHub: "https://github.com/hafsa2022/invoice-app-front",
+      linkDemo : "https://drive.google.com/file/d/1gRq4IS3QGc1CGuP4lUEA0WhLgKYJARH6/view?usp=sharing",
     },
     {
       id: 3,
-      title: "خرائط تفاعلية",
-      description: "تطبيق خرائط ويب مع تحديد الموقع الجغرافي وفلاتر متقدمة.",
-      image: mapProject,
-      category: "sig",
-      technologies: ["Vue.js", "Google Maps", "Laravel", "MySQL"],
+      title: "موقع تجارة إلكترونية",
+      description:
+        "مشروع تجارة إلكترونية مبني باستخدام Spring Boot و Angular و JWT Authentication و MariaDB، يتيح للمستخدمين تصفح وشراء مجموعة واسعة من المنتجات.",
+      image: webEcommerceImage,
+      category: "fullstack",
+      technologies: ["Angular", "Spring Boot", "MariaDB", "JWT Auth"],
+      linkGitHub: "https://github.com/hafsa2022/ecommerce-website-frontend",
+      linkDemo : "",
     },
     {
       id: 4,
-      title: "منصة التجارة الإلكترونية",
-      description: "حل تجارة إلكترونية شامل مع إدارة المنتجات والمدفوعات.",
-      image: webApp,
+      title: "تطبيق إدارة المنتجات",
+      description: "يتيح لنا هذا التطبيق الويب البحث عن المنتجات، إنشاؤها، تحديثها وحذفها.",
+      image: productManagementImage,
       category: "fullstack",
-      technologies: ["Angular", "Laravel", "MySQL"],
+      technologies: ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel"],
+      linkGitHub: "https://github.com/hafsa2022/product-management-web-application-frontend",
+      linkDemo : "",
     },
     {
       id: 5,
-      title: "نظام الترميز الجغرافي",
-      description: "خدمة ترميز جغرافي والبحث عن العناوين مع قاعدة بيانات مكانية.",
-      image: gisProject,
-      category: "sig",
-      technologies: ["Python", "PostgreSQL", "FastAPI", "PostGIS"],
+      title: "منصة وظائف",
+      description:
+        "تطبيق ويب يتيح البحث، الإنشاء، التحديث وحذف المنتجات.",
+      image: jobBordImage,
+      category: "fullstack",
+      technologies: ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel", "JWT Auth"],
+      linkGitHub: "https://github.com/hafsa2022/job-board-angular-laravel",
+      linkDemo : "",
     },
     {
       id: 6,
-      title: "واجهة برمجة التطبيقات",
-      description: "واجهة برمجة تطبيقات قوية لإدارة البيانات مع مصادقة JWT.",
-      image: mapProject,
-      category: "fullstack",
-      technologies: ["Node.js", "Express", "PostgreSQL", "JWT"],
+      title: "بوابة جغرافية بسيطة",
+      description:
+        "بوابة جغرافية بسيطة تتيح رسم الخرائط، البحث عن المواقع والتفاعل مع الطبقات.",
+      image: geoprtalImage,
+      category: "sig",
+      technologies: ["Vue.js", "Vuetify", "Leaflet"],
+      linkGitHub: "https://github.com/hafsa2022/mini-geoportail",
+      linkDemo : "",
     },
+    {
+      id: 7,
+      title: "مختصر الروابط",
+      description:
+        "صفحة ويب تتيح تقصير الروابط الطويلة إلى روابط قصيرة وسهلة المشاركة.",
+      image: urlShortnerImage,
+      category: "fullstack",
+      technologies: ["Angular", "Laravel", "CSS"],
+      linkGitHub: "https://github.com/hafsa2022/url-shortener-frontend",
+      linkDemo : "",
+    }
   ],
-  en: [
+  en:[
     {
       id: 1,
-      title: "Spatial Analysis System",
-      description: "Advanced geospatial analysis application for territorial management and urban planning.",
-      image: gisProject,
-      category: "sig",
-      technologies: ["QGIS", "PostGIS", "Python", "Leaflet"],
+      title: "Movie Search Project",
+      description: "A simple web page that allows users to search for movies.",
+      image: mapProject,
+      category: "fullstack",
+      technologies: ["React", "Appwrite", "TMDB API"],
+      linkGitHub: "https://github.com/hafsa2022/movies-project", 
+      linkDemo : "",
     },
     {
       id: 2,
-      title: "Analytics Dashboard",
-      description: "Interactive dashboard for real-time data visualization.",
-      image: webApp,
+      title: "Invoice Management App",
+      description:
+        "An application that allows users to perform various operations such as searching, creating, updating, downloading, and deleting invoices. It also supports switching the language from French to English.",
+      image: invoiceImage,
       category: "fullstack",
-      technologies: ["React", "Node.js", "PostgreSQL", "Chart.js"],
+      technologies: ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel", "JWT Auth"],
+      linkGitHub: "https://github.com/hafsa2022/invoice-app-front",
+      linkDemo : "https://drive.google.com/file/d/1gRq4IS3QGc1CGuP4lUEA0WhLgKYJARH6/view?usp=sharing",
     },
     {
       id: 3,
-      title: "Interactive Mapping",
-      description: "Web mapping application with geolocation and advanced filters.",
-      image: mapProject,
-      category: "sig",
-      technologies: ["Vue.js", "Google Maps", "Laravel", "MySQL"],
+      title: "E-commerce Website",
+      description:
+        "The E-Commerce project built with Spring Boot, Angular, JWT Authentication, and MariaDB is an innovative web application that allows users to browse and purchase a wide range of products.",
+      image: webEcommerceImage,
+      category: "fullstack",
+      technologies: ["Angular", "Spring Boot", "MariaDB", "JWT Auth"],
+      linkGitHub: "https://github.com/hafsa2022/ecommerce-website-frontend",
+      linkDemo : "",
     },
     {
       id: 4,
-      title: "E-commerce Platform",
-      description: "Complete e-commerce solution with product management and payments.",
-      image: webApp,
+      title: "Product Management App",
+      description:
+        "This web application allows users to search, create, update, and delete products.",
+      image: productManagementImage,
       category: "fullstack",
-      technologies: ["Angular", "Laravel", "MySQL"],
+      technologies: ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel"],
+      linkGitHub: "https://github.com/hafsa2022/product-management-web-application-frontend",
+      linkDemo : "",
     },
     {
       id: 5,
-      title: "Geocoding System",
-      description: "Geocoding service and address search with spatial database.",
-      image: gisProject,
-      category: "sig",
-      technologies: ["Python", "PostgreSQL", "FastAPI", "PostGIS"],
+      title: "Job Board",
+      description:
+        "A web application that allows users to search, create, update, and delete products.",
+      image: jobBordImage,
+      category: "fullstack",
+      technologies: ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel", "JWT Auth"],
+      linkGitHub: "https://github.com/hafsa2022/job-board-angular-laravel",
+      linkDemo : "",
     },
     {
       id: 6,
-      title: "RESTful API",
-      description: "Robust API for data management with JWT authentication.",
-      image: mapProject,
-      category: "fullstack",
-      technologies: ["Node.js", "Express", "PostgreSQL", "JWT"],
+      title: "Simple Geoportal",
+      description:
+        "A simple geoportal that allows users to map data, search for locations, and interact with map layers.",
+      image: geoprtalImage,
+      category: "gis",
+      technologies: ["Vue.js", "Vuetify", "Leaflet"],
+      linkGitHub: "https://github.com/hafsa2022/mini-geoportail",
+      linkDemo : "",
     },
+    {
+      id: 7,
+      title: "URL Shortener",
+      description:
+        "A web page that allows users to shorten long URLs into shorter and easy-to-share links.",
+      image: urlShortnerImage,
+      category: "fullstack",
+      technologies: ["Angular", "Laravel", "CSS"],
+      linkGitHub: "https://github.com/hafsa2022/url-shortener-frontend",
+      linkDemo : "",
+    }
   ],
 };
 
@@ -273,7 +355,12 @@ export default function Projects() {
                       <Button
                         variant="outline"
                         size="icon"
-                        onClick={() => console.log(`View GitHub: ${project.title}`)}
+                        onClick={() => {
+                          const link = document.createElement('a');
+                          link.target="_blank";
+                          link.href = project.linkGitHub;
+                          link.click();
+                          }}
                         data-testid={`button-github-${project.id}`}
                       >
                         <Github className="h-4 w-4" />

@@ -19,7 +19,7 @@ export default function Navbar() {
     { href: "#technologies", label: t.nav.technologies },
     { href: "#projects", label: t.nav.projects },
     { href: "#activities", label: t.nav.activities },
-    { href: "#testimonials", label: t.nav.testimonials },
+    // { href: "#testimonials", label: t.nav.testimonials },
     { href: "#contact", label: t.nav.contact },
   ];
 
@@ -81,7 +81,12 @@ export default function Navbar() {
                 variant="default"
                 size="sm"
                 className="hidden sm:flex gap-2"
-                onClick={() => console.log("Download CV clicked")}
+                onClick= {() => {
+                    const link = document.createElement('a');
+                    link.href = '/cv.pdf';
+                    link.download = 'Hafsa-EL-Akhdar-CV.pdf';
+                    link.click();
+                  }}
                 data-testid="button-download-cv"
               >
                 <Download className="h-4 w-4" />
@@ -141,7 +146,12 @@ export default function Navbar() {
                 <Button
                   variant="default"
                   className="w-full gap-2"
-                  onClick={() => console.log("Download CV clicked")}
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/cv.pdf';
+                    link.download = 'Hafsa-EL-Akhdar-CV.pdf';
+                    link.click();
+                  }}
                 >
                   <Download className="h-4 w-4" />
                   <span>{t.nav.downloadCV}</span>

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { MapPin, Code, Database } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
-import profileImg from "@assets/generated_images/professional_profile_placeholder.png";
+import profileImg from "/hafsa.jpeg";
 
 export default function About() {
   const { t } = useLanguage();
@@ -62,9 +62,9 @@ export default function About() {
               <p className="text-muted-foreground leading-relaxed">
                 {t.about.bio2}
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              {/* <p className="text-muted-foreground leading-relaxed">
                 {t.about.bio3}
-              </p>
+              </p> */}
             </div>
 
             <div className="grid sm:grid-cols-3 gap-4 mt-8">

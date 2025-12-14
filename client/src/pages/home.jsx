@@ -7,7 +7,7 @@ import Skills from "@/components/portfolio/Skills";
 import Technologies from "@/components/portfolio/Technologies";
 import Projects from "@/components/portfolio/Projects";
 import Activities from "@/components/portfolio/Activities";
-import Testimonials from "@/components/portfolio/Testimonials";
+//import Testimonials from "@/components/portfolio/Testimonials";
 import Contact from "@/components/portfolio/Contact";
 import Footer from "@/components/portfolio/Footer";
 import ScrollToTop from "@/components/portfolio/ScrollToTop";
@@ -25,7 +25,6 @@ export default function Home() {
             <Technologies />
             <Projects />
             <Activities />
-            <Testimonials />
             <Contact />
           </main>
           <Footer />

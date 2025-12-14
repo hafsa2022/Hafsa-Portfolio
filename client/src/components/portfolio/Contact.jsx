@@ -11,9 +11,8 @@ import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "./LanguageContext";
 
 const socialLinks = [
-  { icon: SiGithub, label: "GitHub", href: "#", color: "#181717" },
-  { icon: SiLinkedin, label: "LinkedIn", href: "#", color: "#0A66C2" },
-  { icon: SiX, label: "X", href: "#", color: "#000000" },
+  { icon: SiGithub, label: "GitHub", href: "https://github.com/hafsa2022", color: "#181717" },
+  { icon: SiLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/hafsa-el-akhdar-92b446198/", color: "#0A66C2" }
 ];
 
 export default function Contact() {
@@ -30,19 +29,19 @@ export default function Contact() {
     {
       icon: Mail,
       label: t.contact.emailLabel,
-      value: "hafsa.elakhdar@email.com",
-      href: "mailto:hafsa.elakhdar@email.com",
+      value: "h.hafsaelakhdar@gmail.com",
+      href: "mailto:h.hafsaelakhdar@gmail.com",
     },
     {
       icon: Phone,
       label: t.contact.phoneLabel,
-      value: "+212 6XX XXX XXX",
-      href: "tel:+2126XXXXXXXX",
+      value: "+212 650 840 950",
+      href: "tel:+212650840950",
     },
     {
       icon: MapPin,
       label: t.contact.locationLabel,
-      value: "Casablanca, Maroc",
+      value: "Maroc",
       href: "#",
     },
   ];
@@ -206,7 +205,7 @@ export default function Contact() {
               </div>
             </Card>
 
-            <Card className="p-0 overflow-hidden">
+            {/* <Card className="p-0 overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212281.74954087897!2d-7.7358631!3d33.5731104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd4778aa113b%3A0xb06c1d84f310fd3!2sCasablanca%2C%20Morocco!5e0!3m2!1sen!2sus!4v1702000000000!5m2!1sen!2sus"
                 width="100%"
@@ -218,7 +217,7 @@ export default function Contact() {
                 title="Location Map"
                 data-testid="map-embed"
               />
-            </Card>
+            </Card> */}
           </motion.div>
         </div>
       </div>
