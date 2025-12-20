@@ -54,7 +54,7 @@ const projectsData = {
       category: "fullstack",
       technologies:  ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel"],
       linkGitHub: "https://github.com/hafsa2022/product-management-web-application-frontend",
-      linkDemo : "",
+      linkDemo : "https://www.linkedin.com/posts/hafsa-el-akhdar-92b446198_fullstack-vuejs-laravel-activity-7125510585789624320-54MH?utm_source=share&utm_medium=member_desktop",
     },
     {
       id: 5,
@@ -64,7 +64,7 @@ const projectsData = {
       category: "fullstack",
       technologies:  ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel", "JWT Auth"],
       linkGitHub: "https://github.com/hafsa2022/job-board-angular-laravel",
-      linkDemo : "",
+      linkDemo : "https://www.linkedin.com/posts/hafsa-el-akhdar-92b446198_codsoft-angular-bootstrap-activity-7134948433550815233-NnpR?utm_source=share&utm_medium=member_desktop",
     },
     {
       id: 6,
@@ -128,7 +128,7 @@ const projectsData = {
       category: "fullstack",
       technologies: ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel"],
       linkGitHub: "https://github.com/hafsa2022/product-management-web-application-frontend",
-      linkDemo : "",
+      linkDemo : "https://www.linkedin.com/posts/hafsa-el-akhdar-92b446198_fullstack-vuejs-laravel-activity-7125510585789624320-54MH?utm_source=share&utm_medium=member_desktop",
     },
     {
       id: 5,
@@ -139,7 +139,7 @@ const projectsData = {
       category: "fullstack",
       technologies: ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel", "JWT Auth"],
       linkGitHub: "https://github.com/hafsa2022/job-board-angular-laravel",
-      linkDemo : "",
+      linkDemo : "https://www.linkedin.com/posts/hafsa-el-akhdar-92b446198_codsoft-angular-bootstrap-activity-7134948433550815233-NnpR?utm_source=share&utm_medium=member_desktop",
     },
     {
       id: 6,
@@ -206,7 +206,7 @@ const projectsData = {
       category: "fullstack",
       technologies: ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel"],
       linkGitHub: "https://github.com/hafsa2022/product-management-web-application-frontend",
-      linkDemo : "",
+      linkDemo : "https://www.linkedin.com/posts/hafsa-el-akhdar-92b446198_fullstack-vuejs-laravel-activity-7125510585789624320-54MH?utm_source=share&utm_medium=member_desktop",
     },
     {
       id: 5,
@@ -217,7 +217,7 @@ const projectsData = {
       category: "fullstack",
       technologies: ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel", "JWT Auth"],
       linkGitHub: "https://github.com/hafsa2022/job-board-angular-laravel",
-      linkDemo : "",
+      linkDemo : "https://www.linkedin.com/posts/hafsa-el-akhdar-92b446198_codsoft-angular-bootstrap-activity-7134948433550815233-NnpR?utm_source=share&utm_medium=member_desktop",
     },
     {
       id: 6,
@@ -345,7 +345,12 @@ export default function Projects() {
                         variant="default"
                         size="sm"
                         className="flex-1 gap-2"
-                        onClick={() => console.log(`View demo: ${project.title}`)}
+                        onClick={() => {
+                          const link = document.createElement('a');
+                          link.target="_blank";
+                          link.href = project.linkDemo;
+                          link.click();
+                        }}
                         data-testid={`button-demo-${project.id}`}
                       >
                         <ExternalLink className="h-4 w-4" />
