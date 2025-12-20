@@ -6,27 +6,26 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import geoprtalImage from "../../assets/geoportal.png";
-// import moviesImage from "../../assets/";
+import moviesImage from "../../assets/movies.png";
 import invoiceImage from "../../assets/invoice_app.png";
 import urlShortnerImage from "../../assets/url_shortener.png";
 import jobBordImage from "../../assets/job_board.png";
 import webEcommerceImage from "../../assets/ecommerce.png";
 import productManagementImage from "../../assets/product_manage.png";
-import mapProject from "@assets/generated_images/interactive_map_project.png";
 
 
 const projectsData = {
   fr: [
-    // {
-    //   id: 1,
-    //   title: "projet de chercher Films",
-    //   description: "Simple page web permet d'effectuer des recherches des films.",
-    //   image: mapProject,
-    //   category: "fullstack",
-    //   technologies: ["React", "Appwrite" ,"TMDB API" ],
-    //   linkGitHub: "https://github.com/hafsa2022/movies-project",
-    //   linkDemo : "",
-    // },
+    {
+      id: 1,
+      title: "projet de chercher Films",
+      description: "Simple page web permet d'effectuer des recherches des films.",
+      image: moviesImage,
+      category: "fullstack",
+      technologies: ["React", "Appwrite" ,"TMDB API" ],
+      linkGitHub: "https://github.com/hafsa2022/movies-project",
+      linkDemo : "https://movies-project-seven-psi.vercel.app/",
+    },
     {
       id: 2,
       title: "Application de gestion des factures",
@@ -89,16 +88,16 @@ const projectsData = {
     },
   ],
   ar: [
-    // {
-    //   id: 1,
-    //   title: "مشروع البحث عن الأفلام",
-    //   description: "صفحة ويب بسيطة تتيح للمستخدم البحث عن الأفلام.",
-    //   image: mapProject,
-    //   category: "fullstack",
-    //   technologies: ["React", "Appwrite", "TMDB API"],
-    //   linkGitHub: "https://github.com/hafsa2022/movies-project",
-    //   linkDemo : "",
-    // },
+    {
+      id: 1,
+      title: "مشروع البحث عن الأفلام",
+      description: "صفحة ويب بسيطة تتيح للمستخدم البحث عن الأفلام.",
+      image: moviesImage,
+      category: "fullstack",
+      technologies: ["React", "Appwrite", "TMDB API"],
+      linkGitHub: "https://github.com/hafsa2022/movies-project",
+      linkDemo : "https://movies-project-seven-psi.vercel.app/",
+    },
     {
       id: 2,
       title: "تطبيق إدارة الفواتير",
@@ -166,16 +165,16 @@ const projectsData = {
     }
   ],
   en:[
-    // {
-    //   id: 1,
-    //   title: "Movie Search Project",
-    //   description: "A simple web page that allows users to search for movies.",
-    //   image: mapProject,
-    //   category: "fullstack",
-    //   technologies: ["React", "Appwrite", "TMDB API"],
-    //   linkGitHub: "https://github.com/hafsa2022/movies-project", 
-    //   linkDemo : "",
-    // },
+    {
+      id: 1,
+      title: "Movie Search Project",
+      description: "A simple web page that allows users to search for movies.",
+      image: moviesImage,
+      category: "fullstack",
+      technologies: ["React", "Appwrite", "TMDB API"],
+      linkGitHub: "https://github.com/hafsa2022/movies-project", 
+      linkDemo : "https://movies-project-seven-psi.vercel.app/",
+    },
     {
       id: 2,
       title: "Invoice Management App",
