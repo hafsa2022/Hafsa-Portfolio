@@ -5,8 +5,10 @@ import {
   SiReact, SiVuedotjs, SiLaravel, SiNodedotjs, SiPython, 
   SiPostgresql, SiMysql, SiGithub, SiTailwindcss, SiBootstrap,
   SiQgis, SiDocker, SiTypescript, SiPhp, SiJavascript,
-  SiAngular, SiFigma, SiHtml5, SiCss3, SiGooglemaps
+  SiAngular, SiFigma, SiHtml5, SiCss3, SiGooglemaps, SiLeaflet
 } from "react-icons/si";
+
+import { FaReact, FaGitAlt, FaTasks } from "react-icons/fa";
 
 const technologies = [
   { icon: SiReact, name: "React", color: "#61DAFB" },
@@ -24,11 +26,14 @@ const technologies = [
   { icon: SiMysql, name: "MySQL", color: "#4479A1" },
   { icon: SiQgis, name: "QGIS", color: "#589632" },
   { icon: SiGooglemaps, name: "Google Maps", color: "#4285F4" },
+  { icon: SiLeaflet, name: "Leaflet", color: "#77c77cff" },
   { icon: SiFigma, name: "Figma", color: "#F24E1E" },
   { icon: SiGithub, name: "GitHub", color: "#181717" },
   { icon: SiTailwindcss, name: "Tailwind CSS", color: "#06B6D4" },
   { icon: SiBootstrap, name: "Bootstrap", color: "#7952B3" },
   { icon: SiDocker, name: "Docker", color: "#2496ED" },
+  { icon: FaTasks, name: "Scrum", color: "#F15A24" },
+  
 ];
 
 export default function Technologies() {
