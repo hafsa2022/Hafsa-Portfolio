@@ -83,7 +83,7 @@ export default function Navbar() {
                 className="hidden sm:flex gap-2"
                 onClick= {() => {
                     const link = document.createElement('a');
-                    link.href = '/cv_Hafsa_EL_AKHDAR.pdf';
+                    link.href = '/CV_HAFSA_EL_AKHDAR.pdf';
                     link.download = 'Hafsa-EL-Akhdar-CV.pdf';
                     link.click();
                   }}
@@ -148,7 +148,7 @@ export default function Navbar() {
                   className="w-full gap-2"
                   onClick={() => {
                     const link = document.createElement('a');
-                    link.href = '/cv_Hafsa_EL_AKHDAR.pdf';
+                    link.href = '/CV_HAFSA_EL_AKHDAR.pdf';
                     link.download = 'Hafsa-EL-Akhdar-CV.pdf';
                     link.click();
                   }}
