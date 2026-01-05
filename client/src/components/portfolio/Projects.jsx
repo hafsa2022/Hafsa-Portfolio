@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import geoprtalImage from "../../assets/geoportal.png";
-import resumeAnalyzerImage from "../../assets/resume_analyzer.png";
+import resumeAnalyzerImage from "../../assets/ai_resume_analyzer.png";
 import moviesImage from "../../assets/movies.png";
 import invoiceImage from "../../assets/invoice_app.png";
 import urlShortnerImage from "../../assets/url_shortener.png";
