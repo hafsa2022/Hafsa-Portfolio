@@ -69,11 +69,11 @@ const projectsData = {
     },
     {
       id: 6,
-      title: "Tableau d’offres d’emploi",
-      description: "L’application web nous permet de rechercher, créer, mettre à jour et supprimer des produits",
+      title: "Job Board",
+      description: "Une application web qui permet aux utilisateurs de rechercher et d’obtenir de nouvelles opportunités facilement et rapidement",
       image: jobBordImage,
       category: "fullstack",
-      technologies:  ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel", "JWT Auth"],
+      technologies: ["Angular", "Laravel", "JWT Auth", "PostgreSQL" ],
       linkGitHub: "https://github.com/hafsa2022/job-board-angular-laravel",
       linkDemo : "https://www.linkedin.com/posts/hafsa-el-akhdar-92b446198_codsoft-angular-bootstrap-activity-7134948433550815233-NnpR?utm_source=share&utm_medium=member_desktop",
     },
@@ -153,12 +153,12 @@ const projectsData = {
     },
     {
       id: 6,
-      title: "منصة وظائف",
+      title: "Job Board",
       description:
-        "تطبيق ويب يتيح البحث، الإنشاء، التحديث وحذف المنتجات.",
+        "تطبيق ويب يتيح للمستخدمين البحث والحصول على فرص جديدة بسهولة وسرعة.",
       image: jobBordImage,
       category: "fullstack",
-      technologies: ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel", "JWT Auth"],
+      technologies: ["Angular", "Laravel", "JWT Auth", "PostgreSQL" ],
       linkGitHub: "https://github.com/hafsa2022/job-board-angular-laravel",
       linkDemo : "https://www.linkedin.com/posts/hafsa-el-akhdar-92b446198_codsoft-angular-bootstrap-activity-7134948433550815233-NnpR?utm_source=share&utm_medium=member_desktop",
     },
@@ -243,10 +243,10 @@ const projectsData = {
       id: 6,
       title: "Job Board",
       description:
-        "A web application that allows users to search, create, update, and delete products.",
+        "A web application that allows users to search and get new opportunities easy and fast",
       image: jobBordImage,
       category: "fullstack",
-      technologies: ["Vue.js", "Vuetify", "Vuex", "PostgreSQL", "Laravel", "JWT Auth"],
+      technologies: ["Angular", "Laravel", "JWT Auth", "PostgreSQL" ],
       linkGitHub: "https://github.com/hafsa2022/job-board-angular-laravel",
       linkDemo : "https://www.linkedin.com/posts/hafsa-el-akhdar-92b446198_codsoft-angular-bootstrap-activity-7134948433550815233-NnpR?utm_source=share&utm_medium=member_desktop",
     },
@@ -353,7 +353,7 @@ export default function Projects() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-2 left-2 right-2 flex flex-wrap gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {project.technologies.slice(0, 3).map((tech) => (
+                      {project.technologies.slice(0, 4).map((tech) => (
                         <Badge
                           key={tech}
                           variant="secondary"
