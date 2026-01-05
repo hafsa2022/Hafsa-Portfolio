@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import geoprtalImage from "../../assets/geoportal.png";
+import resumeAnalyzerImage from "../../assets/resume_analyzer.png";
 import moviesImage from "../../assets/movies.png";
 import invoiceImage from "../../assets/invoice_app.png";
 import urlShortnerImage from "../../assets/url_shortener.png";
@@ -18,6 +19,16 @@ const projectsData = {
   fr: [
     {
       id: 1,
+      title: "AI Resume Analyzer",
+      description: "Création d’un analyseur de CV basé sur l’IA qui permet de créer des offres d’emploi, d’importer les CV des candidats et d’évaluer automatiquement les CV selon les exigences des postes grâce à l’IA.",
+      image: resumeAnalyzerImage,
+      category: "fullstack",
+      technologies: ["React", "React Router" ,"Tailwind CSS", "Puter.js" ],
+      linkGitHub: "https://github.com/hafsa2022/ai-resume-analyser",
+      linkDemo : "https://ai-resume-analyser-roan.vercel.app/",
+    },
+    {
+      id: 2,
       title: "projet de chercher Films",
       description: "Simple page web permet d'effectuer des recherches des films.",
       image: moviesImage,
@@ -27,7 +38,7 @@ const projectsData = {
       linkDemo : "https://movies-project-seven-psi.vercel.app/",
     },
     {
-      id: 2,
+      id: 3,
       title: "Application de gestion des factures",
       description: "Une app permet d’effectuer diverses opérations telles que la recherche, la création, la mise à jour, le téléchargement et la suppression de factures. De plus, il permet de changer la langue du français à l’anglais.",
       image: invoiceImage,
@@ -37,7 +48,7 @@ const projectsData = {
       linkDemo : "https://drive.google.com/file/d/1gRq4IS3QGc1CGuP4lUEA0WhLgKYJARH6/view?usp=sharing",
     },
     {
-      id: 3,
+      id: 4,
       title: "Site Web-ecommerce",
       description: "Le E-Commerce Project avec Spring Boot, Angular, JWT Athentication et mariaDB est une application web innovante qui permet aux utilisateurs d’explorer et d’acheter une large gamme de produits.",
       image: webEcommerceImage,
@@ -47,7 +58,7 @@ const projectsData = {
       linkDemo : "",
     },
     {
-      id: 4,
+      id: 5,
       title: "App de gestion des produits",
       description: "L’application web nous permet de rechercher, créer, mettre à jour et supprimer des produits",
       image: productManagementImage,
@@ -57,7 +68,7 @@ const projectsData = {
       linkDemo : "https://www.linkedin.com/posts/hafsa-el-akhdar-92b446198_fullstack-vuejs-laravel-activity-7125510585789624320-54MH?utm_source=share&utm_medium=member_desktop",
     },
     {
-      id: 5,
+      id: 6,
       title: "Tableau d’offres d’emploi",
       description: "L’application web nous permet de rechercher, créer, mettre à jour et supprimer des produits",
       image: jobBordImage,
@@ -67,7 +78,7 @@ const projectsData = {
       linkDemo : "https://www.linkedin.com/posts/hafsa-el-akhdar-92b446198_codsoft-angular-bootstrap-activity-7134948433550815233-NnpR?utm_source=share&utm_medium=member_desktop",
     },
     {
-      id: 6,
+      id: 7,
       title: "Géoportail simple",
       description: "Simple Geoportail nous permet de cartographier, de chercher des lieux et de manipuler entre les couches.",
       image: geoprtalImage,
@@ -77,7 +88,7 @@ const projectsData = {
       linkDemo : "",
     },
     {
-      id: 7,
+      id: 8,
       title: "Raccourcisseur d’URL",
       description: "page web qui permet de raccourcir des URL longues en des liens plus courts et faciles à partager.",
       image: urlShortnerImage,
@@ -88,10 +99,20 @@ const projectsData = {
     },
   ],
   ar: [
-    {
+        {
       id: 1,
+      title: "AI Resume Analyzer",
+      description: "تطوير محلل السير الذاتية باستخدام الذكاء الاصطناعي يمكن من إنشاء إعلانات الوظائف، استيراد سير المرشحين، وتقييم السير الذاتية ومطابقتها تلقائياً مع متطلبات الوظائف باستخدام الذكاء الاصطناعي.",
+      image: resumeAnalyzerImage,
+      category: "fullstack",
+      technologies: ["React", "React Router" ,"Tailwind CSS", "Puter.js" ],
+      linkGitHub: "https://github.com/hafsa2022/ai-resume-analyser",
+      linkDemo : "https://ai-resume-analyser-roan.vercel.app/",
+    },
+    {
+      id: 2,
       title: "مشروع البحث عن الأفلام",
-      description: "صفحة ويب بسيطة تتيح للمستخدم البحث عن الأفلام.",
+      description: "Création d’un analyseur de CV basé sur l’IA qui permet de créer des offres d’emploi, d’importer les CV des candidats et d’évaluer automatiquement les CV selon les exigences des postes grâce à l’IA.",
       image: moviesImage,
       category: "fullstack",
       technologies: ["React", "Appwrite", "TMDB API"],
@@ -99,7 +120,7 @@ const projectsData = {
       linkDemo : "https://movies-project-seven-psi.vercel.app/",
     },
     {
-      id: 2,
+      id: 3,
       title: "تطبيق إدارة الفواتير",
       description:
         "تطبيق يتيح للمستخدم تنفيذ عدة عمليات مثل البحث، الإنشاء، التحديث، التحميل وحذف الفواتير، كما يدعم تغيير اللغة من الفرنسية إلى الإنجليزية.",
@@ -110,7 +131,7 @@ const projectsData = {
       linkDemo : "https://drive.google.com/file/d/1gRq4IS3QGc1CGuP4lUEA0WhLgKYJARH6/view?usp=sharing",
     },
     {
-      id: 3,
+      id: 4,
       title: "موقع تجارة إلكترونية",
       description:
         "مشروع تجارة إلكترونية مبني باستخدام Spring Boot و Angular و JWT Authentication و MariaDB، يتيح للمستخدمين تصفح وشراء مجموعة واسعة من المنتجات.",
@@ -121,7 +142,7 @@ const projectsData = {
       linkDemo : "",
     },
     {
-      id: 4,
+      id: 5,
       title: "تطبيق إدارة المنتجات",
       description: "يتيح لنا هذا التطبيق الويب البحث عن المنتجات، إنشاؤها، تحديثها وحذفها.",
       image: productManagementImage,
@@ -131,7 +152,7 @@ const projectsData = {
       linkDemo : "https://www.linkedin.com/posts/hafsa-el-akhdar-92b446198_fullstack-vuejs-laravel-activity-7125510585789624320-54MH?utm_source=share&utm_medium=member_desktop",
     },
     {
-      id: 5,
+      id: 6,
       title: "منصة وظائف",
       description:
         "تطبيق ويب يتيح البحث، الإنشاء، التحديث وحذف المنتجات.",
@@ -142,7 +163,7 @@ const projectsData = {
       linkDemo : "https://www.linkedin.com/posts/hafsa-el-akhdar-92b446198_codsoft-angular-bootstrap-activity-7134948433550815233-NnpR?utm_source=share&utm_medium=member_desktop",
     },
     {
-      id: 6,
+      id: 7,
       title: "بوابة جغرافية بسيطة",
       description:
         "بوابة جغرافية بسيطة تتيح رسم الخرائط، البحث عن المواقع والتفاعل مع الطبقات.",
@@ -153,7 +174,7 @@ const projectsData = {
       linkDemo : "",
     },
     {
-      id: 7,
+      id: 8,
       title: "مختصر الروابط",
       description:
         "صفحة ويب تتيح تقصير الروابط الطويلة إلى روابط قصيرة وسهلة المشاركة.",
@@ -167,6 +188,16 @@ const projectsData = {
   en:[
     {
       id: 1,
+      title: "AI Resume Analyzer",
+      description: "Developed an AI-powered resume analyzer. Create job postings, import candidate resumes, and use AI to automatically evaluate and match resumes to job requirements.",
+      image: resumeAnalyzerImage,
+      category: "fullstack",
+      technologies: ["React", "React Router" ,"Tailwind CSS", "Puter.js" ],
+      linkGitHub: "https://github.com/hafsa2022/ai-resume-analyser",
+      linkDemo : "https://ai-resume-analyser-roan.vercel.app/",
+    },
+    {
+      id: 2,
       title: "Movie Search Project",
       description: "A simple web page that allows users to search for movies.",
       image: moviesImage,
@@ -176,7 +207,7 @@ const projectsData = {
       linkDemo : "https://movies-project-seven-psi.vercel.app/",
     },
     {
-      id: 2,
+      id: 3,
       title: "Invoice Management App",
       description:
         "An application that allows users to perform various operations such as searching, creating, updating, downloading, and deleting invoices. It also supports switching the language from French to English.",
@@ -187,7 +218,7 @@ const projectsData = {
       linkDemo : "https://drive.google.com/file/d/1gRq4IS3QGc1CGuP4lUEA0WhLgKYJARH6/view?usp=sharing",
     },
     {
-      id: 3,
+      id: 4,
       title: "E-commerce Website",
       description:
         "The E-Commerce project built with Spring Boot, Angular, JWT Authentication, and MariaDB is an innovative web application that allows users to browse and purchase a wide range of products.",
@@ -198,7 +229,7 @@ const projectsData = {
       linkDemo : "",
     },
     {
-      id: 4,
+      id: 5,
       title: "Product Management App",
       description:
         "This web application allows users to search, create, update, and delete products.",
@@ -209,7 +240,7 @@ const projectsData = {
       linkDemo : "https://www.linkedin.com/posts/hafsa-el-akhdar-92b446198_fullstack-vuejs-laravel-activity-7125510585789624320-54MH?utm_source=share&utm_medium=member_desktop",
     },
     {
-      id: 5,
+      id: 6,
       title: "Job Board",
       description:
         "A web application that allows users to search, create, update, and delete products.",
@@ -220,7 +251,7 @@ const projectsData = {
       linkDemo : "https://www.linkedin.com/posts/hafsa-el-akhdar-92b446198_codsoft-angular-bootstrap-activity-7134948433550815233-NnpR?utm_source=share&utm_medium=member_desktop",
     },
     {
-      id: 6,
+      id: 7,
       title: "Simple Geoportal",
       description:
         "A simple geoportal that allows users to map data, search for locations, and interact with map layers.",
@@ -231,7 +262,7 @@ const projectsData = {
       linkDemo : "",
     },
     {
-      id: 7,
+      id: 8,
       title: "URL Shortener",
       description:
         "A web page that allows users to shorten long URLs into shorter and easy-to-share links.",
